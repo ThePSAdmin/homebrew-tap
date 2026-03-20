@@ -5,46 +5,46 @@
 class TasknotesCli < Formula
   desc "CLI for managing TaskNotes tasks in an Obsidian vault"
   homepage "https://github.com/thepsadmin/tasknotes-cli"
-  version "1.0.1"
+  version "1.0.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/ThePSAdmin/tasknotes-cli/releases/download/v1.0.1/tasknotes-cli_1.0.1_darwin_amd64.tar.gz"
-      sha256 "7b5e8551cdae0abbde6860e012b28dba7e4edd07347dae0532593c8069d99123"
+      url "https://github.com/ThePSAdmin/tasknotes-cli/releases/download/v1.0.2/tasknotes-cli_1.0.2_darwin_amd64.tar.gz"
+      sha256 "f6c6da0c51b85e6eb6caade77a43bed6b1a0aac3e65813a621f38bbc9f2debe1"
 
       define_method(:install) do
-        bin.install "tasknotes"
+        bin.install "tasknotes-cli"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/ThePSAdmin/tasknotes-cli/releases/download/v1.0.1/tasknotes-cli_1.0.1_darwin_arm64.tar.gz"
-      sha256 "1210f0635d44a303eb4fcf5438cda8d139297a738f9929709836813f834e226f"
+      url "https://github.com/ThePSAdmin/tasknotes-cli/releases/download/v1.0.2/tasknotes-cli_1.0.2_darwin_arm64.tar.gz"
+      sha256 "be09fcc7ae27d23c93356a254c54d4e651c855b6ebdb728afa4b7016615887d9"
 
       define_method(:install) do
-        bin.install "tasknotes"
+        bin.install "tasknotes-cli"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ThePSAdmin/tasknotes-cli/releases/download/v1.0.1/tasknotes-cli_1.0.1_linux_amd64.tar.gz"
-      sha256 "fc4d24913032592fa8a99932018b95691fff13cf5f6055e6e363f87c1d2b8fe3"
+      url "https://github.com/ThePSAdmin/tasknotes-cli/releases/download/v1.0.2/tasknotes-cli_1.0.2_linux_amd64.tar.gz"
+      sha256 "b805c272189ca3845752cdfdff070883d1d89a764aaa1ce41a09756091c39904"
       define_method(:install) do
-        bin.install "tasknotes"
+        bin.install "tasknotes-cli"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ThePSAdmin/tasknotes-cli/releases/download/v1.0.1/tasknotes-cli_1.0.1_linux_arm64.tar.gz"
-      sha256 "41248a1f1bb4f0a075f5dccbaf2473bcc5e0f039f9a0db87350eff221fee7b2e"
+      url "https://github.com/ThePSAdmin/tasknotes-cli/releases/download/v1.0.2/tasknotes-cli_1.0.2_linux_arm64.tar.gz"
+      sha256 "ace5bd101428272e74e5f49a4e0d4b89597ac2a6c134e0da810dc41d195b349b"
       define_method(:install) do
-        bin.install "tasknotes"
+        bin.install "tasknotes-cli"
       end
     end
   end
 
   test do
-    system "#{bin}/tasknotes", "version"
+    system "#{bin}/tasknotes-cli", "version"
   end
 end
